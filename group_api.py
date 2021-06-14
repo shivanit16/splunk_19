@@ -11,7 +11,6 @@ def get_request(pr_date):
         cowin_data = r.json()
 
         last7DaysRegistration = cowin_data.get('last7DaysRegistration')
-        print("final member of last7DaysRegistration")
         reg_data = last7DaysRegistration[-1]
         reg_res = dict(index="reg_data", data=reg_data)
         print(json.dumps(reg_res))
