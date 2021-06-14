@@ -1,6 +1,9 @@
 import requests
 import json
-import datetime
+from datetime import datetime
+import pytz
+
+IST = pytz.timezone('Asia/Kolkata')
 
 def get_request(pr_date):
     rurl = 'https://api.cowin.gov.in/api/v1/reports/v2/getPublicReports?state_id=&district_id=&date=%s' % (pr_date)
@@ -27,7 +30,7 @@ def get_request(pr_date):
 
 
 def main(): 
-    present_date = datetime.date.today()
+    present_date = datetime.now(IST).date()
     get_request(present_date)
 
 main()
