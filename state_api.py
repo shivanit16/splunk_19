@@ -25,8 +25,9 @@ def get_request(pr1,pr2, state_id):
 
     return yesterday, daybefore_yes
 
-def compute_result(yesterday, dayBeforeYes):
+def compute_result(yesterday, dayBeforeYes, _date):
     result = dict(
+        date = str(_date),
         state = yesterday['state_name'], 
         total_cum = yesterday['total'], 
         total = yesterday['total'] - dayBeforeYes['total'],
@@ -47,7 +48,7 @@ def main():
 
     for state_id in range(0,36):
         yesterday, dayBeforeYes = get_request(Previous_Date_Formatted1,Previous_Date_Formatted2, state_id)
-        result = json.dumps(compute_result(yesterday, dayBeforeYes))
+        result = json.dumps(compute_result(yesterday, dayBeforeYes, Previous_Date_Formatted1))
         print (result)
 
 
