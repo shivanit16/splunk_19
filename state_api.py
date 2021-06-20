@@ -37,15 +37,12 @@ def compute_result(yesterday, dayBeforeYes):
     
 def main(): 
     Current_Date_Formatted = datetime.datetime.now(IST).strftime ('%Y-%m-%d') # format the date to ddmmyyyy
-    print ('Current Date: ' + str(Current_Date_Formatted))
     
     Previous_Date1 = datetime.datetime.now(IST) - datetime.timedelta(days=1)
     Previous_Date_Formatted1 = Previous_Date1.strftime ('%Y-%m-%d') # format the date to ddmmyyyy
-    print ('Previous Date1: ' + str(Previous_Date_Formatted1))
 
     Previous_Date2 = datetime.datetime.now(IST) - datetime.timedelta(days=2)
     Previous_Date_Formatted2 = Previous_Date2.strftime ('%Y-%m-%d') # format the date to ddmmyyyy
-    print ('Previous Date2: ' + str(Previous_Date_Formatted2))
 
 
     for state_id in range(0,36):
