@@ -47,7 +47,7 @@ def main():
 
     for state_id in range(0,36):
         yesterday, dayBeforeYes = get_request(Previous_Date_Formatted1,Previous_Date_Formatted2, state_id)
-        result = compute_result(yesterday, dayBeforeYes)
+        result = json.dumps(compute_result(yesterday, dayBeforeYes))
         print (result)
 
 
